@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row; /* Stack elements horizontally */
+    justify-content: space-between; /* Align items to the start and end */
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px; /* Add some padding to the container */
+}
+
+.login-form {
+    padding: 40px;
+    border-radius: 10px;
+    width: 300px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: auto; /* Push the form to the right */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    margin-right: 10px; /* Reduced margin for smaller screens */
+}
+
+.tagline {
+    font-size: 30px;
+    text-align: center;
+    padding: 20px 0;
+    margin-top:260px;
+    margin-left: -700px;
+}
+.login{
+    margin-right: 40px;
+}
+.input-group > input{
+    height: 6px;
+}
+.p2{
+    font-size: 90px;
+    padding-left: 40px;
+}
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input {
+    border-color: #4CAF50;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    margin-left: 9px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    color: #666;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 600px) {
+    .login-container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+
+    .login-form {
+        width: 90%; /* Adjusted width for smaller screens */
+        margin: 0 auto; /* Center the form horizontally on smaller screens */
+    }
+
+    .input-group label {
+        margin-right: 5px; /* Further reduced margin for smaller screens */
+    }
+}
