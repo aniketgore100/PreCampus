@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home Page</title>
+    <link rel="stylesheet" href="/CSS/dorpdown.css">
+</head>
+<body>
+    <h1>Welcome to the Student Home Page</h1>
+    
+    <form action="process_selection.php" method="POST">
+        <label for="stream">Select Stream:</label>
+        <select name="stream" id="stream">
+            <option value="1">Stream 1</option>
+            <option value="2">Stream 2</option>
+            <option value="3">Stream 3</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+        
+        <label for="year">Select Year:</label>
+        <select name="year" id="year">
+            <option value="1">Year 1</option>
+            <option value="2">Year 2</option>
+            <option value="3">Year 3</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+        
+        <label for="subject">Select Subject:</label>
+        <select name="subject" id="subject">
+            <option value="1">Subject 1</option>
+            <option value="2">Subject 2</option>
+            <option value="3">Subject 3</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

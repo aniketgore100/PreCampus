@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreCampus Student Registration</title>
+    <link rel="stylesheet" href="/css/studentReg.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1>Welcome to PreCampus</h1>
+            <p>PreCampus is a leading online platform that helps students prepare for their academic journey.</p>
+            <p>Our mission is to provide quality education and resources to help students achieve their goals.</p>
+        </div>
+        <div class="right-side">
+            <div class="form-container">
+                <h1>Student Registration</h1>
+
+                <form id="student-registration-form" action="/auth/studentReg" method="POST">
+                    <div class="form-group">
+                        <label for="student-first-name">Full Name</label>
+                        <input type="text" id="student-first-name" name="student-first-name" placeholder="Enter your Full name" required>
+                    </div>                   
+
+                    <div class="form-group">
+                        <label for="student-email">Email</label>
+                        <input type="email" id="student-email" name="student-email" placeholder="Enter your email" required>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="student-last-name">Phone Number</label>
+                        <input type="text" id="student-last-name" name="student-last-name" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-username">Username</label>
+                        <input type="text" id="student-username" name="student-username" placeholder="Enter your username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="student-password">Password</label>
+                        <input type="password" id="student-password" name="student-password" placeholder="Enter your password" required>
+                    </div>
+
+                 
+
+                    <button type="button" id="student-registerBtn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="studentScript.js"></script>
+</body>
+</html>
