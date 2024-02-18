@@ -5,36 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Home Page</title>
     <link rel="stylesheet" href="/CSS/dorpdown.css">
+    <link rel="stylesheet" href="/CSS/dropdown1.css">
 </head>
 <body>
     <h1>Welcome to the Student Home Page</h1>
     
-    <form action="process_selection.php" method="POST">
+    <form action="" method="POST" id="studentForm">
         <label for="stream">Select Stream:</label>
         <select name="stream" id="stream">
-            <option value="1">Stream 1</option>
-            <option value="2">Stream 2</option>
-            <option value="3">Stream 3</option>
+            <option value="" disabled selected>Select Stream</option>
+            <option value="1">Mechanical Engineering</option>
+            <option value="2">Electronics and Telecommunication Engineering</option>
+            <option value="3">Computer Science and Engineering</option>
             <!-- Add more options as needed -->
         </select><br><br>
         
         <label for="year">Select Year:</label>
         <select name="year" id="year">
-            <option value="1">Year 1</option>
-            <option value="2">Year 2</option>
-            <option value="3">Year 3</option>
+            <option value="" disabled selected>Select Year</option>
+            <option value="1">Year 2</option>
+            <option value="2">Year 3</option>
+            <option value="3">Year 4</option>
             <!-- Add more options as needed -->
         </select><br><br>
         
         <label for="subject">Select Subject:</label>
         <select name="subject" id="subject">
-            <option value="1">Subject 1</option>
-            <option value="2">Subject 2</option>
-            <option value="3">Subject 3</option>
-            <!-- Add more options as needed -->
+            <option value="" disabled selected>Select Subject</option>
+            <!-- Options will be dynamically added here based on the selection -->
         </select><br><br>
         
         <input type="submit" value="Submit">
     </form>
+
+    <div id="selectedInfo" style="display: none;">
+        <h2>Selected Information</h2>
+        <p>Stream: <span id="selectedStream"></span></p>
+        <p>Year: <span id="selectedYear"></span></p>
+        <p>Subject: <span id="selectedSubject"></span></p>
+        <button id="bookSlotButton">Book Slot</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.getElementById('stream').addEventListener('change', updateSubjects);
+        document.getElementById('year').addEventListener('change', updateSubjects);
+
+        function updateSubjects() {
+            var stream = document.getElementById('stream').value;
+            var year = document.getElementById('year').value;
+            var subjectDropdown = document.getElementById('subject');
+
+            // Clear previous options
+            subjectDropdown.innerHTML = '';
+            // Add new options based on stream and year
+            if (stream === '1' && year === '1') {
+                subjectDropdown.innerHTML += '<option value="1">Mechanical Subject 1</option>';
+                subjectDropdown.innerHTML += '<option value="2">Mechanical Subject 2</option>';
+            } else if (stream === '1' && year === '2') {
+                subjectDropdown.innerHTML += '<option value="3">Mechanical Subject 3</option>';
+                subjectDropdown.innerHTML += '<option value="4">Mechanical Subject 4</option>';
+            } else if (stream === '1' && year === '3') {
+                subjectDropdown.innerHTML += '<option value="5">Mechanical Subject 5</option>';
+                subjectDropdown.innerHTML += '<option value="6">Mechanical Subject 6</option>';
+            } else if (stream === '2' && year === '1') {
+                subjectDropdown.innerHTML += '<option value="7">Electronics Subject 1</option>';
+                subjectDropdown.innerHTML += '<option value="8">Electronics Subject 2</option>';
+            } else if (stream === '2' && year === '2') {
+                subjectDropdown.innerHTML += '<option value="9">Electronics Subject 3</option>';
+                subjectDropdown.innerHTML += '<option value="10">Electronics Subject 4</option>';
+            } else if (stream === '2' && year === '3') {
+                subjectDropdown.innerHTML += '<option value="11">Electronics Subject 5</option>';
+                subjectDropdown.innerHTML += '<option value="12">Electronics Subject 6</option>';
+            } else if (stream === '3' && year === '1') {
+                subjectDropdown.innerHTML += '<option value="13">Computer Science Subject 1</option>';
+                subjectDropdown.innerHTML += '<option value="14">Computer Science Subject 2</option>';
+            } else if (stream === '3' && year === '2') {
+                subjectDropdown.innerHTML += '<option value="15">Computer Science Subject 3</option>';
+                subjectDropdown.innerHTML += '<option value="16">Computer Science Subject 4</option>';
+            } else if (stream === '3' && year === '3') {
+                subjectDropdown.innerHTML += '<option value="17">Computer Science Subject 5</option>';
+                subjectDropdown.innerHTML += '<option value="18">Computer Science Subject 6</option>';
+            }
+        }
+
+        document.getElementById('studentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var stream = document.getElementById('stream').options[document.getElementById('stream').selectedIndex].text;
+            var year = document.getElementById('year').options[document.getElementById('year').selectedIndex].text;
+            var subject = document.getElementById('subject').options[document.getElementById('subject').selectedIndex].text;
+
+            document.getElementById('selectedStream').innerText = stream;
+            document.getElementById('selectedYear').innerText = year;
+            document.getElementById('selectedSubject').innerText = subject;
+            document.getElementById('selectedInfo').style.display = 'block';
+        });
+
+        // Book Slot Button Click Event
+        document.getElementById('bookSlotButton').addEventListener('click', function() {
+            var stream = document.getElementById('stream').value;
+            var year = document.getElementById('year').value;
+            var subject = document.getElementById('subject').value;
+
+            // Send AJAX request to server
+            $.ajax({
+                url: '/send_mail',
+                method: 'POST',
+                data: {
+                    stream: stream,
+                    year: year,
+                    subject: subject
+                },
+                success: function(response) {
+                    alert('Email sent successfully!');
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error sending email:', error);
+                    alert('Error sending email. Please try again later.');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,45 +1,64 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Form</title>
-<link rel="stylesheet" href="/CSS/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/CSS/index.css" />
+  </head>
+
+  <body>
 
     <div class="login-container">
-            <p2 class="p2"><strong>Welcome to PreCampus</strong></p2>
-        
-        <div class="login">
-        <form class="login-form" action="#" method="POST">
+      <p2 class="p2"><strong>Welcome to PreCampus</strong></p2>
+      <div class="login"><form
+          class="login-form"
+          action=""
+          method="POST"
+        >
 
-            <div class="input-group">
-                <label for="username">Username:</label>
-                <input type="text" class="form-control" id="username" name="username" required>
-            </div>
+          <div class="input-group">
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              required
+            />
+          </div>
 
-            <div class="input-group">
-                <label for="password">Password:</label>
-                <input type="password" class="form-control" id="password" name="password" required>
-            </div>
+          <div class="input-group">
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              required
+            />
+          </div>
 
-            <button type="submit" id="loginButton" class="button">Sign In</button>
+          <button type="submit" id="loginButton" class="button">In as
+            Student </button>
 
-            <div class="forgot-password">
-                <a href="#">Forgot password?</a>
-            </div>
-           
-         <!-- HTML -->
-<div class="signup-links">
-    <a href="/studentReg">Sign up as Student</a><br>
-    <a href="/register">Sign up as Interviewer</a>
-</div>
-
-          
+          {{!-- <div>
+            {{#if message}}
+              <h4 class="alert">{{message}}</h4>
+            {{/if}}
+          </div> --}}
+          <div class="forgot-password">
+            <a href="#">Forgot password?</a>
+          </div>
+          <!-- HTML -->
+          <div class="signup-links">
+            <a href="/studentReg">Sign up as Student</a><br />
+            <a href="/register">Sign up as Interviewer</a>
+          </div>
         </form>
-        </div>
+      </div>
     </div>
-    <script src="/js/dropdown.js"></script>
-</body>
+    <script src="/dropdown.js"></script>
+  </body>
+
 </html>
