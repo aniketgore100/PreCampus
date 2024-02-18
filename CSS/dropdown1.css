@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#bookSlotButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+#bookSlotButton:hover {
+    background-color: #0056b3;
+}
+
+
+#selectedInfo {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+#selectedInfo h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#selectedInfo p {
+    margin: 5px 0;
+}
+
+#selectedInfo span {
+    font-weight: bold;
+}
