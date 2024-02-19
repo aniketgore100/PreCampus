@@ -4,19 +4,19 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'nalawademanali6@gmail.com', // Your Gmail email address
-    pass: 'Manali#6010' // Your Gmail password or app-specific password
+    user: 'goreaniket100@gmail.com', // Your Gmail email address
+    pass: 'oezg iexq ksrd jbfy' // Your Gmail password or app-specific password
   }
 });
 
 // Define a function to send email
-function sendEmail(stream, year, subject) {
+function sendEmail(stream, year, subject, note) {
   // Email content
   const mailOptions = {
-    from: 'nalawademanali6@gmail.com', // Your Gmail email address
-    to: 'goreaniket100@gmail.com', // Recipient's email address
+    from: 'goreaniket100@gmail.com', // Your Gmail email address
+    to: 'Rajvardhan.precampus@gmail.com', // Recipient's email address
     subject: 'Slot Booking Information',
-    text: `Stream: ${stream}\nYear: ${year}\nSubject: ${subject}`
+    text: `Stream: ${stream}\nYear: ${year}\nSubject: ${subject}\nnote: ${note}`
   };
 
   // Send email
