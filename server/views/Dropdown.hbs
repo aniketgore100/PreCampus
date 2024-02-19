@@ -106,7 +106,7 @@
             var stream = document.getElementById('stream').value;
             var year = document.getElementById('year').value;
             var subject = document.getElementById('subject').value;
-
+            var note = "this mail is sent by system"
             // Send AJAX request to server
             $.ajax({
                 url: '/send_mail',
@@ -114,7 +114,8 @@
                 data: {
                     stream: stream,
                     year: year,
-                    subject: subject
+                    subject: subject,
+                    note : note
                 },
                 success: function(response) {
                     alert('Email sent successfully!');
